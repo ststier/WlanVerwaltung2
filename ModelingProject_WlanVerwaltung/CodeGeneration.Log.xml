@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 14.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/CodeGenLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Codegenerierungs-/Texttransformationsprotokoll">
+  <MessageClass Name="Message" Label="Meldung" Option="Informationsmeldungen anzeigen" />
+  <MessageClass Name="Warning" Label="Warnung" Option="Warnungen anzeigen" />
+  <MessageClass Name="Error" Label="Fehler" Option="Fehler anzeigen" />
+  <MessageClass Name="Property" Label="Eigenschaft" Option="Metadaten anzeigen" />
+  <MessageClass Name="Diagnostic" Label="Meldung" Option="Diagnosemeldungen anzeigen" />
+  <Message Timestamp="2017-06-22T14:43:38" Importance="High" Text="Die Codegenerierung oder Texttransformation wurde gestartet." />
+  <Message Timestamp="2017-06-22T14:43:38" Importance="Diagnostic" Text="Name = ClassTemplate" />
+  <Message Timestamp="2017-06-22T14:43:38" Importance="Diagnostic" Text="Überschreiben = True" />
+  <Message Timestamp="2017-06-22T14:43:38" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProject_WlanVerwaltungLib\ModelingProject_WlanVerwaltungLib.csproj" />
+  <Message Timestamp="2017-06-22T14:43:38" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2017-06-22T14:43:38" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2017-06-22T14:43:38" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2017-06-22T14:43:38" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2017-06-22T14:43:38" Importance="Medium" Text="Die Textvorlagenbindung von ModelingProject_WlanVerwaltung: 'ClassTemplate' wendet ClassTemplate.t4 an für: 'ModelingProject_WlanVerwaltung::Benutzer' -  (Class), 'ModelingProject_WlanVerwaltung::Lehrer' -  (Class), 'ModelingProject_WlanVerwaltung::Schueler' -  (Class), 'ModelingProject_WlanVerwaltung::Admin' -  (Class), 'ModelingProject_WlanVerwaltung::AccessPoint' -  (Class), 'ModelingProject_WlanVerwaltung::Schulklasse' -  (Class) " />
+  <Message Timestamp="2017-06-22T14:43:39" Importance="Medium" Text="'ModelingProject_WlanVerwaltung::Benutzer' -  (Class) : Erfolg (Datei ersetzt) - C:\Users\stuff\documents\visual studio 2015\Projects\WlanVerwaltung\ModelingProject_WlanVerwaltungLib\GeneratedCode\Benutzer.cs" />
+  <Message Timestamp="2017-06-22T14:43:39" Importance="Medium" Text="'ModelingProject_WlanVerwaltung::Lehrer' -  (Class) : Erfolg (Datei ersetzt) - C:\Users\stuff\documents\visual studio 2015\Projects\WlanVerwaltung\ModelingProject_WlanVerwaltungLib\GeneratedCode\Lehrer.cs" />
+  <Message Timestamp="2017-06-22T14:43:39" Importance="Medium" Text="'ModelingProject_WlanVerwaltung::Schueler' -  (Class) : Erfolg (Datei ersetzt) - C:\Users\stuff\documents\visual studio 2015\Projects\WlanVerwaltung\ModelingProject_WlanVerwaltungLib\GeneratedCode\Schueler.cs" />
+  <Message Timestamp="2017-06-22T14:43:39" Importance="Medium" Text="'ModelingProject_WlanVerwaltung::Admin' -  (Class) : Erfolg (Datei ersetzt) - C:\Users\stuff\documents\visual studio 2015\Projects\WlanVerwaltung\ModelingProject_WlanVerwaltungLib\GeneratedCode\Admin.cs" />
+  <Message Timestamp="2017-06-22T14:43:39" Importance="Medium" Text="'ModelingProject_WlanVerwaltung::AccessPoint' -  (Class) : Erfolg (Datei ersetzt) - C:\Users\stuff\documents\visual studio 2015\Projects\WlanVerwaltung\ModelingProject_WlanVerwaltungLib\GeneratedCode\AccessPoint.cs" />
+  <Message Timestamp="2017-06-22T14:43:39" Importance="Medium" Text="'ModelingProject_WlanVerwaltung::Schulklasse' -  (Class) : Erfolg (Datei ersetzt) - C:\Users\stuff\documents\visual studio 2015\Projects\WlanVerwaltung\ModelingProject_WlanVerwaltungLib\GeneratedCode\Schulklasse.cs" />
+  <Message Timestamp="2017-06-22T14:43:39" Importance="Diagnostic" Text="Name = StructTemplate" />
+  <Message Timestamp="2017-06-22T14:43:39" Importance="Diagnostic" Text="Überschreiben = True" />
+  <Message Timestamp="2017-06-22T14:43:39" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProject_WlanVerwaltungLib\ModelingProject_WlanVerwaltungLib.csproj" />
+  <Message Timestamp="2017-06-22T14:43:39" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2017-06-22T14:43:39" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2017-06-22T14:43:39" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2017-06-22T14:43:39" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2017-06-22T14:43:39" Importance="Medium" Text="Die Textvorlagenbindung von ModelingProject_WlanVerwaltung: 'StructTemplate' wendet StructTemplate.t4 an für: 'ModelingProject_WlanVerwaltung::Benutzer' -  (Class), 'ModelingProject_WlanVerwaltung::Lehrer' -  (Class), 'ModelingProject_WlanVerwaltung::Schueler' -  (Class), 'ModelingProject_WlanVerwaltung::Admin' -  (Class), 'ModelingProject_WlanVerwaltung::AccessPoint' -  (Class), 'ModelingProject_WlanVerwaltung::Schulklasse' -  (Class) " />
+  <Message Timestamp="2017-06-22T14:43:40" Importance="Diagnostic" Text="'ModelingProject_WlanVerwaltung::Benutzer' -  (Class): Es wurde keine Datei erstellt, da die 'AppliesToElement'-Methode der Vorlage 'StructTemplate.t4' als 'false' ausgewertet wurde." />
+  <Message Timestamp="2017-06-22T14:43:40" Importance="Diagnostic" Text="'ModelingProject_WlanVerwaltung::Lehrer' -  (Class): Es wurde keine Datei erstellt, da die 'AppliesToElement'-Methode der Vorlage 'StructTemplate.t4' als 'false' ausgewertet wurde." />
+  <Message Timestamp="2017-06-22T14:43:40" Importance="Diagnostic" Text="'ModelingProject_WlanVerwaltung::Schueler' -  (Class): Es wurde keine Datei erstellt, da die 'AppliesToElement'-Methode der Vorlage 'StructTemplate.t4' als 'false' ausgewertet wurde." />
+  <Message Timestamp="2017-06-22T14:43:40" Importance="Diagnostic" Text="'ModelingProject_WlanVerwaltung::Admin' -  (Class): Es wurde keine Datei erstellt, da die 'AppliesToElement'-Methode der Vorlage 'StructTemplate.t4' als 'false' ausgewertet wurde." />
+  <Message Timestamp="2017-06-22T14:43:40" Importance="Diagnostic" Text="'ModelingProject_WlanVerwaltung::AccessPoint' -  (Class): Es wurde keine Datei erstellt, da die 'AppliesToElement'-Methode der Vorlage 'StructTemplate.t4' als 'false' ausgewertet wurde." />
+  <Message Timestamp="2017-06-22T14:43:40" Importance="Diagnostic" Text="'ModelingProject_WlanVerwaltung::Schulklasse' -  (Class): Es wurde keine Datei erstellt, da die 'AppliesToElement'-Methode der Vorlage 'StructTemplate.t4' als 'false' ausgewertet wurde." />
+  <Message Timestamp="2017-06-22T14:43:40" Importance="Diagnostic" Text="Die Auswahl enthielt 5 Elemente, die an keine Vorlage gebunden sind." />
+  <Message Timestamp="2017-06-22T14:43:40" Importance="Diagnostic" Text="'bde089ab-bd53-4d3d-9d44-e4f81f7eedd3' -  (Generalization): keine gebundene Vorlage." />
+  <Message Timestamp="2017-06-22T14:43:40" Importance="Diagnostic" Text="'8ba41d95-9ae3-4f21-aadf-0e7ba968fa26' -  (Generalization): keine gebundene Vorlage." />
+  <Message Timestamp="2017-06-22T14:43:40" Importance="Diagnostic" Text="'6763f26b-29f0-41e0-b266-f1172af5a555' -  (Generalization): keine gebundene Vorlage." />
+  <Message Timestamp="2017-06-22T14:43:40" Importance="Diagnostic" Text="'ModelingProject_WlanVerwaltung::' -  (Association): keine gebundene Vorlage." />
+  <Message Timestamp="2017-06-22T14:43:40" Importance="Diagnostic" Text="'ModelingProject_WlanVerwaltung::' -  (Association): keine gebundene Vorlage." />
+  <Message Timestamp="2017-06-22T14:43:40" Importance="High" Text="Die Codegenerierung ist abgeschlossen. Fehler: 0. Warnungen: 0." />
+</Log>
