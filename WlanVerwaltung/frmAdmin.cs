@@ -13,12 +13,16 @@ namespace WlanVerwaltung
 {
     public partial class frmAdmin : Form
     {
-        AccessPoint ap = new AccessPoint();
-        AccessPoint ap1 = new AccessPoint();
 
         // MySql Connection
         static string connStr = "server=127.0.0.1; database=wlanverwaltung; uid=wlanuser; password=1234;";
         static MySqlConnection conn = new MySqlConnection(connStr);
+
+        private string accessPointID;
+        private string macadresse;
+        private string ssid;
+        private string verschluesselungstyp;
+        private string idT_AccessPoints;
 
         public frmAdmin()
         {
@@ -28,33 +32,8 @@ namespace WlanVerwaltung
 
         private void frmAdmin_Load(object sender, EventArgs e)
         {
-
+            //get Data from DB and apply them to DataGridView
             selectFromDb();
-
-
-
-            //MessageBox.Show("Dot Net Perls is awesome.");
-
-            /*
-            DataGridViewButtonColumn col = new DataGridViewButtonColumn();
-            col.UseColumnTextForButtonValue = True;
-            col.Text = "ADD";
-            col.Name = "MyButton";
-            dataGridView1.Columns.Add(col);
-            */
-
-            ap.ssid = "AP1";
-            ap.macAdresse = "123455667753556456";
-            ap.verschluesselungstyp = "WPA/WPA2";
-
-            ap1.ssid = "AP0";
-            ap1.macAdresse = "123455667753556456";
-            ap1.verschluesselungstyp = "WPA/WPA2";
-
-            
-
-            //accessPointBindingSource.Add(ap);
-            //accessPointBindingSource.Add(ap1);
 
         }
 
@@ -81,6 +60,16 @@ namespace WlanVerwaltung
                 conn.Close();
                 dgvAccessPoints.Columns["idT_AccessPoints"].ReadOnly = true;
 
+                int row = dgvAccessPoints.RowCount -1;
+                int col = dgvAccessPoints.ColumnCount;
+
+                dgvAccessPoints["isactive", row].Value = "True";
+                dgvAccessPoints["isactive", row].ReadOnly = true;
+
+                dgvBtnAdd.Text = "\U0001f4be";
+
+                dgvAccessPoints.Columns["dgvBtnAdd"].DisplayIndex = dgvAccessPoints.ColumnCount -1;
+
             }
             catch
             {
@@ -91,17 +80,17 @@ namespace WlanVerwaltung
         private void dgvAccessPoints_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
+            //if sender from DataGridView is Button
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.ColumnIndex == 0 && e.RowIndex != dgvAccessPoints.RowCount - 1)
             {
                 try
                 {
-                    //+dgvAccessPoints.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()
-                    string accessPointID = dgvAccessPoints[e.ColumnIndex + 1, e.RowIndex].Value.ToString();
-                    string macadresse = dgvAccessPoints[e.ColumnIndex + 2, e.RowIndex].Value.ToString();
-                    string ssid = dgvAccessPoints[e.ColumnIndex + 3, e.RowIndex].Value.ToString();
-                    string verschluesselungstyp = dgvAccessPoints[e.ColumnIndex + 4, e.RowIndex].Value.ToString();
-                    updateDb(accessPointID, macadresse, ssid, verschluesselungstyp);
-                    MessageBox.Show(sender.ToString() + " / " + accessPointID + " " + macadresse + " " + ssid + " " + verschluesselungstyp);
+                    this.accessPointID = dgvAccessPoints["idT_AccessPoints", e.RowIndex].Value.ToString();
+                    this.macadresse = dgvAccessPoints["macadresse", e.RowIndex].Value.ToString();
+                    this.ssid = dgvAccessPoints["ssid", e.RowIndex].Value.ToString();
+                    this.verschluesselungstyp = dgvAccessPoints["verschluesselungstyp", e.RowIndex].Value.ToString();
+                    updateDb(e.ColumnIndex, e.RowIndex);
+
                 }
                 catch
                 {
@@ -111,30 +100,99 @@ namespace WlanVerwaltung
 
         }
 
-        private void updateDb (string accessPointID, string macadresse, string ssid, string verschluesselungstyp)
+        private void updateDb (int colIndex, int rowIndex)
         {
 
-            MessageBox.Show(dgvAccessPoints.Columns["isactive"].ToString() );
-            //if ()
+            string query = "";
+            bool success = false;
+            DataGridViewCheckBoxCell cell = dgvAccessPoints["isactive", rowIndex] as DataGridViewCheckBoxCell;
 
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO `T_AccessPoints` (idT_AccessPoints, macadresse, ssid, verschluesselungstyp, isactive) VALUES(NULL, @macadresse, @ssid, @verschluesselungstyp, 1)", conn);
-         
-            cmd.Parameters.AddWithValue("@macadresse", macadresse);
-            cmd.Parameters.AddWithValue("@ssid", ssid);
-            cmd.Parameters.AddWithValue("@verschluesselungstyp", verschluesselungstyp);
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            // if A new Access Point was added
+            if (dgvAccessPoints["idT_AccessPoints", rowIndex].Value == null | dgvAccessPoints["idT_AccessPoints", rowIndex].Value.ToString() == "")
+            {
+                query = buildInsertAccesspointQuery();
 
-            cmd = new MySqlCommand("UPDATE `wlanverwaltung`.`t_accesspoints` SET `isactive`= '0' WHERE `idT_AccessPoints`= '" + accessPointID + "'", conn);
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+                success = queryExecute(query);
 
-            //RELOAD TABLEGRIDVIEW
+                MessageBox.Show(success.ToString());
+
+            }
+            else if (cell.Value.Equals(true))
+            {
+
+                query = buildInsertAccesspointQuery();
+
+                success = queryExecute(query);
+
+                query = buildDeleteAccesspointQuery();
+
+                success = queryExecute(query);
+
+                MessageBox.Show(success.ToString());
+
+            }
+            else
+            {
+                query = buildDeleteAccesspointQuery();
+
+                success = queryExecute(query);
+
+                MessageBox.Show(success.ToString());
+
+            }
+
+            //RELOAD TableGridView
             selectFromDb();
 
-            // UPDATE `wlanverwaltung`.`t_accesspoints` SET `verschluesselungstyp`= 'WPA3' WHERE `idT_AccessPoints`= '2';
+        }
+
+        private string buildInsertAccesspointQuery()
+        {
+
+            string query = "INSERT INTO `T_AccessPoints` " +
+                    "(" +
+                        "idT_AccessPoints, " +
+                        "macadresse, " +
+                        "ssid, " +
+                        "verschluesselungstyp, " +
+                        "isactive) " +
+                    "VALUES(" +
+                        "NULL, " +
+                        "'" + this.macadresse + "', " +
+                        "'" + this.ssid + "', " +
+                        "'" + this.verschluesselungstyp + "', " +
+                        "1" +
+                    " )";
+
+            return query;
+        }
+
+        private string buildDeleteAccesspointQuery()
+        {
+            string query = "UPDATE `wlanverwaltung`.`t_accesspoints` " + 
+                "SET `isactive`= '0' " + 
+                "WHERE `idT_AccessPoints`= '" + 
+                this.accessPointID + "'";
+
+            return query;
+        }
+
+        private bool queryExecute(string query)
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                return true;
+            } catch (Exception ex)
+            {
+                //MessageBox.Show("Fehlercode Fehler Code xx0012 - " + ex); //debugmode
+                MessageBox.Show("Fehlercode Fehler Code xx0012 - " + ex);
+                return false;
+            }
 
         }
     }
