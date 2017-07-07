@@ -23,13 +23,31 @@ public class Benutzer
 		set;
 	}
 
-	private int person_id
+	private string benutzerName
 	{
 		get;
 		set;
 	}
 
 	private bool gesperrt
+	{
+		get;
+		set;
+	}
+
+	private bool schueler
+	{
+		get;
+		set;
+	}
+
+	private bool lehrer
+	{
+		get;
+		set;
+	}
+
+	private bool admin
 	{
 		get;
 		set;

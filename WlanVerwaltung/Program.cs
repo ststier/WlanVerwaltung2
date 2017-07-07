@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WlanVerwaltung
 {
     static class Program
@@ -16,7 +17,9 @@ namespace WlanVerwaltung
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new frmAdmin());
+            //Application.Run(new frmLogin());
+
         }
     }
 }

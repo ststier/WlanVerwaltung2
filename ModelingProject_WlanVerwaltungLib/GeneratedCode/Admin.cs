@@ -11,10 +11,5 @@ using System.Text;
 
 public class Admin : Benutzer
 {
-	public virtual void benutzerAnlegen(Benutzer benutzer)
-	{
-		throw new System.NotImplementedException();
-	}
-
 }
 

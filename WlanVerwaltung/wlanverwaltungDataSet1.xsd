@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="wlanverwaltungDataSet" targetNamespace="http://tempuri.org/wlanverwaltungDataSet1.xsd" xmlns:mstns="http://tempuri.org/wlanverwaltungDataSet1.xsd" xmlns="http://tempuri.org/wlanverwaltungDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="wlanverwaltungConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="wlanverwaltungConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WlanVerwaltung.Properties.Settings.GlobalReference.Default.wlanverwaltungConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="t_accesspointsTableAdapter" GeneratorDataComponentClassName="t_accesspointsTableAdapter" Name="t_accesspoints" UserDataComponentName="t_accesspointsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="wlanverwaltungConnectionString (Settings)" DbObjectName="wlanverwaltung.t_accesspoints" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idT_AccessPoints`, `macadresse`, `ssid`, `verschluesselungstyp` FROM `t_accesspoints`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="wlanverwaltungDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="wlanverwaltungDataSet" msprop:Generator_UserDSName="wlanverwaltungDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="t_accesspoints" msprop:Generator_TableClassName="t_accesspointsDataTable" msprop:Generator_TableVarName="tablet_accesspoints" msprop:Generator_TablePropName="t_accesspoints" msprop:Generator_RowDeletingName="t_accesspointsRowDeleting" msprop:Generator_RowChangingName="t_accesspointsRowChanging" msprop:Generator_RowEvHandlerName="t_accesspointsRowChangeEventHandler" msprop:Generator_RowDeletedName="t_accesspointsRowDeleted" msprop:Generator_UserTableName="t_accesspoints" msprop:Generator_RowChangedName="t_accesspointsRowChanged" msprop:Generator_RowEvArgName="t_accesspointsRowChangeEvent" msprop:Generator_RowClassName="t_accesspointsRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

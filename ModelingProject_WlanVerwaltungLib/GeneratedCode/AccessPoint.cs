@@ -11,19 +11,19 @@ using System.Text;
 
 public class AccessPoint
 {
-	private string ssid
+	public virtual string ssid
 	{
 		get;
 		set;
 	}
 
-	private string macAdresse
+	public virtual string macAdresse
 	{
 		get;
 		set;
 	}
 
-	private string verschluesselungstyp
+	public virtual string verschluesselungstyp
 	{
 		get;
 		set;
